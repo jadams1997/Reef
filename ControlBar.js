@@ -70,7 +70,7 @@ const FriendsButton = () => (
     </TouchableOpacity>
   );
 
-const ControlBar = () => (
+const ControlBar = (props) => (
     <View style={styles.control} >
       <FriendsButton />
       <ProfileButton />

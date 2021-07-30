@@ -1,26 +1,18 @@
 import React from "react";
-import { View, StyleSheet, StatusBar } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { MainFeed } from "./MainFeed.js";
 import { ControlBar } from "./ControlBar.js";
-import { Content } from "./Content.js";
+
+const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <View style = {styles.page}>
-      <StatusBar 
-        barStyle = "dark-content" 
-        hidden = {false} 
-        translucent = {true}
-      />
-      <Content />  
-      <ControlBar />
-    </View>
+    <NavigationContainer>
+        <Tab.Navigator tabBar={(props) => <ControlBar {...props} />}>
+          <Tab.Screen name="MainFeed" component={MainFeed} />
+        </Tab.Navigator>
+    </NavigationContainer>
   );
 };
 
-const styles =  StyleSheet.create({
-  page: {
-    flex:1,
-    backgroundColor: "white",
-    marginTop: 0
-  },
-});
