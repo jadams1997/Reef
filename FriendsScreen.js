@@ -1,8 +1,7 @@
 import React from "react";
 import { View, StyleSheet, StatusBar } from "react-native";
-import { Content } from "./Content.js";
 
-const MainFeed = () => {
+const FriendsScreen = () => {
     return (
         <View style = {styles.page}>
             <StatusBar 
@@ -10,7 +9,6 @@ const MainFeed = () => {
                     hidden = {false} 
                     translucent = {true}
             />
-            <Content />  
         </View>
     );
 }
@@ -23,4 +21,4 @@ const styles =  StyleSheet.create({
     },
 });
 
-export { MainFeed };
+export { FriendsScreen };
