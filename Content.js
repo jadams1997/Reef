@@ -11,29 +11,31 @@ const smallBox = width/3;
 
 //PictureFeed
 
-const Square = (props) => {
+class Square extends React.PureComponent {
   
-  const handler = () => {
-    const number = toInteger(props.title);
+  handler = () => {
+    const number = toInteger(this.props.title);
     return (
-      props.handler(number)
+      this.props.handler(number)
     );
   };
 
-  return (
-    <LinearGradient 
-      colors={['#00d3ff','#00efe3','#00fe67','#00ff79','#00ffcc','#00eff9','#00b6ff','#0068ff']} 
-      start={{x: 0, y: 0}} 
-      end={{x: 1, y: 1}} 
-      style={styles.squareBorderGradient}
-    > 
-      <View style={styles.whiteBackground}>
-        <TouchableOpacity style={styles.square} onPress={(handler)}>
-          <Text style={styles.title}>{props.title}</Text>
-        </TouchableOpacity>
-      </View>
-    </LinearGradient>
-  );
+  render() {
+    return (
+      <LinearGradient 
+        colors={['#00d3ff','#00efe3','#00fe67','#00ff79','#00ffcc','#00eff9','#00b6ff','#0068ff']} 
+        start={{x: 0, y: 0}} 
+        end={{x: 1, y: 1}} 
+        style={styles.squareBorderGradient}
+      > 
+        <View style={styles.whiteBackground}>
+          <TouchableOpacity style={styles.square} onPress={(this.handler)}>
+            <Text style={styles.title}>{this.props.title}</Text>
+          </TouchableOpacity>
+        </View>
+      </LinearGradient>
+    );
+  }
 };
 
 const PictureFeed = (props) => {
@@ -47,6 +49,7 @@ const PictureFeed = (props) => {
             renderItem={renderItem}
             keyExtractor={item => item.id}
             numColumns='3'
+            initialNumToRender={18}
             style = {styles.list}
         />
     );
