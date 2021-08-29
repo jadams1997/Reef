@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { View, FlatList, StyleSheet, Text, TextInput, Dimensions, TouchableOpacity } from "react-native";
-import { Entypo } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { DATA } from "./Data.js";
 import { toInteger } from "lodash";

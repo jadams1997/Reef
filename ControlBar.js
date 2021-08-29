@@ -32,7 +32,7 @@ const ControlBar = (props) => {
 
   const menuNav = () => {
     props.navigation.navigate("MenuScreen")
-  }
+  };
   const friendsNav = () => {
     props.navigation.navigate("FriendsScreen");
   };
