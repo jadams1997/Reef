@@ -28,7 +28,7 @@ class Square extends React.PureComponent {
         end={{x: 1, y: 1}} 
         style={styles.squareBorderGradient}
       > 
-        <View style={styles.whiteBackground}>
+        <View style={styles.whiteBoxBackground}>
           <TouchableOpacity style={styles.square} onPress={(this.handler)}>
             <Text style={styles.title}>{this.props.title}</Text>
           </TouchableOpacity>
@@ -50,7 +50,6 @@ const PictureFeed = (props) => {
             keyExtractor={item => item.id}
             numColumns='3'
             initialNumToRender={18}
-            style = {styles.list}
         />
     );
 };
@@ -59,6 +58,7 @@ const PictureFeed = (props) => {
 //Picture
 
 const ExitButton = (props) => {
+  
   const exit = () => (
     props.handler(0)
   );
@@ -68,35 +68,43 @@ const ExitButton = (props) => {
       <Entypo name="cross" size={40} color="black" />
     </TouchableOpacity>
   );
-}
+};
 
 
 const Picture = (props) => {
-    const [text, onChangeText] = React.useState(null);
+    
+  const [text, onChangeText] = React.useState(null);
 
-    useEffect(() => console.log(props.pictureSelected), [props.pictureSelected]); //checks correct state being passed down chain
+  useEffect(() => console.log(props.pictureSelected), [props.pictureSelected]); //checks correct state being passed down chain
 
-    if (props.pictureSelected == 0) {
-        return null;
-    };
-    return (
-        <View style={styles.picture}>
-            <ExitButton handler={props.handler} />
-            <View style={styles.image}>
-                <Text style={styles.title}>{props.pictureSelected}</Text>
-            </View>
-            <TextInput 
-                style={styles.input}
-                onChangeText={onChangeText}
-                value={text}
-                placeholder={"Send Something!"}
-            />
-        </View>
+  if (props.pictureSelected == 0) {
+      return null;
+  };
+  return (
+    <View style={{              //Added View to prevent scrolling whilst viewing image
+      position: 'absolute',
+      width: width,
+      height: height-controlHeight
+    }}>  
+      <View style={styles.picture}>
+          <ExitButton handler={props.handler} />
+          <View style={styles.image}>
+              <Text style={styles.title}>{props.pictureSelected}</Text>
+          </View>
+          <TextInput 
+              style={styles.input}
+              onChangeText={onChangeText}
+              value={text}
+              placeholder={"Send Something!"}
+          />
+      </View>
+    </View>
   ); 
 };
 
 
 //Page Content
+
 const Content = () => {
   const [pictureSelected, setpictureSelected] = React.useState(0);
 
@@ -113,16 +121,13 @@ const Content = () => {
 
 
 const styles =  StyleSheet.create({
-    list: {
-      marginBottom: controlHeight
-    },
     squareBorderGradient: {
       width: smallBox,
       height: smallBox,
       justifyContent: "center",
       alignItems: 'center'
     },
-    whiteBackground: {
+    whiteBoxBackground: {
       width: smallBox-1,
       height: smallBox-1,
       backgroundColor: 'white',
@@ -142,10 +147,9 @@ const styles =  StyleSheet.create({
       color: '#373737'
     },
     picture: {
-      position: 'absolute',
       top: controlHeight/3,
-      left: controlHeight/4,
-      width: width-controlHeight/2,
+      left: controlHeight/8,
+      width: width-controlHeight/4,
       height: height-1.5*controlHeight,
       borderRadius: 10,
       backgroundColor: "white",
