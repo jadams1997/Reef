@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, TouchableOpacity, Dimensions } from "react-native";
+import React from 'react';
+import { View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
 import { Ionicons, FontAwesome5, Entypo, SimpleLineIcons } from '@expo/vector-icons'; 
 import MaskedView from '@react-native-community/masked-view';
 import { LinearGradient } from "expo-linear-gradient";

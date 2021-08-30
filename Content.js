@@ -3,6 +3,7 @@ import { View, FlatList, StyleSheet, Text, TextInput, Dimensions, TouchableOpaci
 import { LinearGradient } from 'expo-linear-gradient';
 import { DATA } from "./Data.js";
 import { toInteger } from "lodash";
+import { Entypo } from '@expo/vector-icons';
 
 const {height, width} = Dimensions.get('window');
 const controlHeight = height/10;
@@ -37,7 +38,7 @@ class Square extends React.PureComponent {
   }
 };
 
-const PictureFeed = (props) => {
+const VerticalPictureList = (props) => {
     const renderItem = ({ item }) => (
         <Square title={item.number} handler={props.handler} />
     );
@@ -111,7 +112,7 @@ const Content = () => {
 
   return (
     <View>
-      <PictureFeed handler={setpictureSelected} />
+      <VerticalPictureList handler={setpictureSelected} />
       <Picture pictureSelected={pictureSelected} handler={setpictureSelected} />
     </View>
   );
