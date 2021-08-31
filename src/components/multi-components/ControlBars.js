@@ -30,53 +30,38 @@ const Button = (props) => (
 
 const ControlBar = (props) => {
 
-  const menuNav = () => {
-    props.navigation.navigate("MenuScreen")
-  };
-  const friendsNav = () => {
-    props.navigation.navigate("FriendsScreen");
-  };
-
-  const messengerNav = () => {
-    props.navigation.navigate("MessengerScreen");
-  };
-  
-  const profileNav = () => {
-    props.navigation.navigate("ProfileScreen");
-  };
-  
-  const feedNav = () => {
-    props.navigation.navigate("PublicFeedScreen");
+  const nav = (screen) => {
+    props.navigation.navigate(screen)
   };
 
   return (
     <View style={styles.control} >
       <Button 
-        nav={menuNav} 
+        nav={() => nav("MenuScreen")} 
         icon={<SimpleLineIcons name="menu" size={24} />}
         start={{x: 0.8, y: 0.2}}
         end={{x: 0.2, y: 0.8}}  
       />
       <Button 
-        nav={messengerNav} 
+        nav={() => nav("MessengerNav")} 
         icon={<Ionicons name="md-chatbox-ellipses" size={30} />}
         start={{x: 0, y: 1}}
         end={{x: 1, y: 0}}  
       />
       <Button 
-        nav={profileNav} 
+        nav={() => nav("ProfileScreen")} 
         icon={<FontAwesome5 name="user-alt" size={24} />}
         start={{x: 0, y: 1}}
         end={{x: 1, y: 0}}  
       />
       <Button 
-        nav={friendsNav} 
+        nav={() => nav("FriendsScreen")} 
         icon={<FontAwesome5 name="user-friends" size={24} />}
         start={{x: 0.8, y: 0.2}}
         end={{x: 0.2, y: 0.8}}  
       />
       <Button 
-        nav={feedNav} 
+        nav={() => nav("PublicFeedScreen")} 
         icon={<Entypo name="quote" size={30} />}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}  
