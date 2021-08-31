@@ -9,7 +9,7 @@ const controlHeight = height/10;
 const buttonWidth = width/5;
 
 const Button = (props) => (
-  <TouchableOpacity onPress={props.nav} style={styles.smallButton} >
+  <TouchableOpacity onPress={props.onPress} style={styles.smallButton} >
     <MaskedView
       style={styles.maskedView}
       maskElement={
@@ -37,31 +37,31 @@ const ControlBar = (props) => {
   return (
     <View style={styles.control} >
       <Button 
-        nav={() => nav("MenuScreen")} 
+        onPress={() => nav("MenuScreen")} 
         icon={<SimpleLineIcons name="menu" size={24} />}
         start={{x: 0.8, y: 0.2}}
         end={{x: 0.2, y: 0.8}}  
       />
       <Button 
-        nav={() => nav("MessengerNav")} 
+        onPress={() => nav("MessengerScreen")} 
         icon={<Ionicons name="md-chatbox-ellipses" size={30} />}
         start={{x: 0, y: 1}}
         end={{x: 1, y: 0}}  
       />
       <Button 
-        nav={() => nav("ProfileScreen")} 
+        onPress={() => nav("ProfileScreen")} 
         icon={<FontAwesome5 name="user-alt" size={24} />}
         start={{x: 0, y: 1}}
         end={{x: 1, y: 0}}  
       />
       <Button 
-        nav={() => nav("FriendsScreen")} 
+        onPress={() => nav("FriendsScreen")} 
         icon={<FontAwesome5 name="user-friends" size={24} />}
         start={{x: 0.8, y: 0.2}}
         end={{x: 0.2, y: 0.8}}  
       />
       <Button 
-        nav={() => nav("PublicFeedScreen")} 
+        onPress={() => nav("PublicFeedScreen")} 
         icon={<Entypo name="quote" size={30} />}
         start={{x: 0, y: 0}}
         end={{x: 1, y: 1}}  
