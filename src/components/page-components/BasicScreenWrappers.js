@@ -6,9 +6,9 @@ const ViewScreenWrapper = ({children}) => {
     return (
         <View style = {styles.page}>
             <StatusBar 
-                    barStyle = "dark-content" 
-                    hidden = {false} 
-                    translucent = {true}
+                barStyle = "dark-content" 
+                hidden = {false} 
+                translucent = {true}
             />
             {children}
         </View>
@@ -19,9 +19,9 @@ const SafeScreenWrapper = ({children}) => {
     return (
         <SafeAreaView style = {styles.page}>
             <StatusBar 
-                    barStyle = "dark-content" 
-                    hidden = {false} 
-                    translucent = {true}
+                barStyle = "dark-content" 
+                hidden = {false} 
+                translucent = {true}
             />
             {children}
         </SafeAreaView>
