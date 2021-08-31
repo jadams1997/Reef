@@ -9,7 +9,7 @@ import { SafeScreenWrapper } from "../components/page-components/BasicScreenWrap
 
 
 
-const {height, width} = Dimensions.get('window');
+const {width} = Dimensions.get('window');
 const profilePictureDiameter = width*(1/2);
 
 const ProfilePictureMain = () => {
