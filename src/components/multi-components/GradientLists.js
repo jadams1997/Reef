@@ -1,9 +1,17 @@
 import React, { useEffect } from "react";
 import { View, FlatList, StyleSheet, Text, TextInput, Dimensions, TouchableOpacity } from "react-native";
-import { LinearGradient } from 'expo-linear-gradient';
-import { DATA } from "./Data.js";
+
 import { toInteger } from "lodash";
+
+import { LinearGradient } from 'expo-linear-gradient';
 import { Entypo } from '@expo/vector-icons';
+
+import { DATA } from "../../utils/Data.js";
+
+
+
+
+
 
 const {height, width} = Dimensions.get('window');
 const controlHeight = height/10;

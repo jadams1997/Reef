@@ -1,8 +1,13 @@
-import React from "react";
-import { SafeAreaView, View, StyleSheet, StatusBar, ScrollView, Text, Image, Dimensions, TouchableOpacity } from "react-native";
+import React, {useEffect} from "react";
+import { View, StyleSheet, ScrollView, Text, Image, Dimensions, TouchableOpacity } from "react-native";
 import MaskedView from '@react-native-community/masked-view';
+
 import { LinearGradient } from "expo-linear-gradient";
-import { useEffect } from "react";
+
+import { SafeScreenWrapper } from "../components/page-components/BasicScreenWrappers";
+
+
+
 
 const {height, width} = Dimensions.get('window');
 const profilePictureDiameter = width*(1/2);
@@ -17,7 +22,7 @@ const ProfilePictureMain = () => {
         >  
             <View style={styles.pictureWhiteBackground}>
                 <Image 
-                    source = {require('./testimages/LinkedIn_Profile.jpg')}
+                    source = {require('../assets/LinkedIn_Profile.jpg')}
                     style = {styles.profilePicture} 
                 />
             </View>
@@ -113,12 +118,7 @@ const ProfileTabBar = () => {
 
 const ProfileScreen = () => {
     return (
-        <SafeAreaView style = {styles.page}>
-            <StatusBar 
-                    barStyle = "dark-content" 
-                    hidden = {false} 
-                    translucent = {true}
-            />
+        <SafeScreenWrapper>
             <ScrollView style = {styles.scrollView} >
                 <View style = {styles.headerWrapper} >
                     <Text style = {styles.pageHeader} >
@@ -131,17 +131,12 @@ const ProfileScreen = () => {
                 </Text>
                 <ProfileTabBar />
             </ScrollView>
-        </SafeAreaView>
+        </SafeScreenWrapper>
     );
 }
 
 const styles =  StyleSheet.create({
     
-    page: {
-      flex:1,
-      marginTop: 0,
-      backgroundColor: "white"
-    },
     scrollView: {
         flex: 1
     },

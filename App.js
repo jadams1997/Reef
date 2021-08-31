@@ -1,12 +1,12 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { MenuScreen } from "./MenuScreen.js";
-import { MessengerScreen } from "./MessengerScreen.js";
-import { PublicFeedScreen } from "./PublicFeedScreen.js";
-import { FriendsScreen } from "./FriendsScreen.js";
-import { ProfileScreen } from "./ProfileScreen.js";
-import { ControlBar } from "./ControlBar.js";
+import { MenuScreen } from "./src/containers/MenuScreen.js";
+import { MessengerScreen } from "./src/containers/MessengerScreen.js";
+import { PublicFeedScreen } from "./src/containers/PublicFeedScreen.js";
+import { FriendsScreen } from "./src/containers/FriendsScreen.js";
+import { ProfileScreen } from "./src/containers/ProfileScreen.js";
+import { ControlBar } from "./src/components/multi-components/ControlBars.js";
 
 const Tab = createBottomTabNavigator();
 
