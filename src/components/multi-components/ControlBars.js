@@ -1,34 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { View, StyleSheet, Dimensions } from 'react-native';
 import { Ionicons, FontAwesome5, Entypo, SimpleLineIcons } from '@expo/vector-icons'; 
-import MaskedView from '@react-native-community/masked-view';
-import { LinearGradient } from "expo-linear-gradient";
+import { IconGradientButton } from '../base-components/Buttons.js'
 
-const {height, width} = Dimensions.get('window');
-const controlHeight = height/10;
-const buttonWidth = width/5;
 
-const Button = (props) => (
-  <TouchableOpacity onPress={props.onPress} style={styles.smallButton} >
-    <MaskedView
-      style={styles.maskedView}
-      maskElement={
-        <View style={styles.maskElement}>
-          {props.icon}
-        </View>
-      }
-    >
-      <LinearGradient 
-        colors={['#00d3ff','#00efe3','#00fe67','#00ff79','#00ffcc','#00eff9','#00b6ff','#0068ff']} 
-        start={props.start} 
-        end={props.end} 
-        style={styles.maskViewGradient} 
-      />
-    </MaskedView>
-  </TouchableOpacity>
-);
-
-const ControlBar = (props) => {
+const AppControlBar = (props) => {
 
   const nav = (screen) => {
     props.navigation.navigate(screen)
@@ -36,31 +12,31 @@ const ControlBar = (props) => {
 
   return (
     <View style={styles.control} >
-      <Button 
+      <IconGradientButton 
         onPress={() => nav("MenuScreen")} 
         icon={<SimpleLineIcons name="menu" size={24} />}
         start={{x: 0.8, y: 0.2}}
         end={{x: 0.2, y: 0.8}}  
       />
-      <Button 
+      <IconGradientButton 
         onPress={() => nav("MessengerScreen")} 
         icon={<Ionicons name="md-chatbox-ellipses" size={30} />}
         start={{x: 0, y: 1}}
         end={{x: 1, y: 0}}  
       />
-      <Button 
+      <IconGradientButton 
         onPress={() => nav("ProfileScreen")} 
         icon={<FontAwesome5 name="user-alt" size={24} />}
         start={{x: 0, y: 1}}
         end={{x: 1, y: 0}}  
       />
-      <Button 
+      <IconGradientButton 
         onPress={() => nav("FriendsScreen")} 
         icon={<FontAwesome5 name="user-friends" size={24} />}
         start={{x: 0.8, y: 0.2}}
         end={{x: 0.2, y: 0.8}}  
       />
-      <Button 
+      <IconGradientButton 
         onPress={() => nav("PublicFeedScreen")} 
         icon={<Entypo name="quote" size={30} />}
         start={{x: 0, y: 0}}
@@ -69,6 +45,9 @@ const ControlBar = (props) => {
     </View >
   );
 };
+
+const {height, width} = Dimensions.get('window');
+const controlHeight = height/10;
 
 const styles =  StyleSheet.create({
     control: {
@@ -84,28 +63,7 @@ const styles =  StyleSheet.create({
       shadowOpacity: 0.51,
       shadowRadius: 13.16,
       elevation: 20,
-    },
-    smallButton: {
-      alignItems: "center",
-      justifyContent: "center",
-      width: buttonWidth,
-      backgroundColor: "white"
-    },
-    maskedView: { 
-      flex: 1, 
-      flexDirection: 'row', 
-      height: '100%' 
-    },
-    maskElement: {
-      backgroundColor: 'transparent',
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    maskViewGradient: {
-      flex: 1, 
-      height: '100%',
     }
 });
 
-export { ControlBar };
+export { AppControlBar };

@@ -6,14 +6,14 @@ import { MessengerScreen } from "./src/containers/MessengerScreen.js";
 import { PublicFeedScreen } from "./src/containers/PublicFeedScreen.js";
 import { FriendsScreen } from "./src/containers/FriendsScreen.js";
 import { ProfileScreen } from "./src/containers/ProfileScreen.js";
-import { ControlBar } from "./src/components/multi-components/ControlBars.js";
+import { AppControlBar } from "./src/components/multi-components/ControlBars.js";
 
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
     <NavigationContainer>
-        <Tab.Navigator tabBar={(props) => <ControlBar {...props} />}>
+        <Tab.Navigator tabBar={(props) => <AppControlBar {...props} />}>
           <Tab.Screen name="PublicFeedScreen" component={PublicFeedScreen} />
           <Tab.Screen name="MenuScreen" component={MenuScreen} />
           <Tab.Screen name="FriendsScreen" component={FriendsScreen} />
