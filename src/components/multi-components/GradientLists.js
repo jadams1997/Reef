@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { View, FlatList, StyleSheet, Text, TextInput, Dimensions, TouchableOpacity } from "react-native";
+import { View, FlatList, StyleSheet, Text, Image, TextInput, Dimensions, TouchableOpacity } from "react-native";
 
 import { toInteger } from "lodash";
 
@@ -20,14 +20,6 @@ const smallBox = width/3;
 //PictureFeed
 
 class Square extends React.PureComponent {
-  
-  handler = () => {
-    const number = toInteger(this.props.title);
-    return (
-      this.props.handler(number)
-    );
-  };
-
   render() {
     return (
       <LinearGradient 
@@ -37,8 +29,8 @@ class Square extends React.PureComponent {
         style={styles.squareBorderGradient}
       > 
         <View style={styles.whiteBoxBackground}>
-          <TouchableOpacity style={styles.square} onPress={(this.handler)}>
-            <Text style={styles.title}>{this.props.title}</Text>
+          <TouchableOpacity style={styles.square} onPress={() => this.props.setPhotoId(this.props.id)}>
+            <Image style={styles.listImage} source={this.props.src}/>
           </TouchableOpacity>
         </View>
       </LinearGradient>
@@ -46,9 +38,9 @@ class Square extends React.PureComponent {
   }
 };
 
-const VerticalPictureList = (props) => {
+const VerticalPhotoList = (props) => {
     const renderItem = ({ item }) => (
-        <Square title={item.number} handler={props.handler} />
+        <Square src={item.src} id={item.id} setPhotoId={props.setPhotoId} />
     );
  
     return (
@@ -68,7 +60,7 @@ const VerticalPictureList = (props) => {
 const ExitButton = (props) => {
   
   const exit = () => (
-    props.handler(0)
+    props.setPhotoId(0)
   );
   
   return (
@@ -79,25 +71,23 @@ const ExitButton = (props) => {
 };
 
 
-const Picture = (props) => {
-    
+const SelectedPhoto = (props) => {
+
   const [text, onChangeText] = React.useState(null);
 
-  useEffect(() => console.log(props.pictureSelected), [props.pictureSelected]); //checks correct state being passed down chain
-
-  if (props.pictureSelected == 0) {
+  if (props.photoId == 0) {
       return null;
   };
   return (
-    <View style={{              //Added View to prevent scrolling whilst viewing image
+    <View style={{            
       position: 'absolute',
       width: width,
       height: height-controlHeight
     }}>  
-      <View style={styles.picture}>
-          <ExitButton handler={props.handler} />
+      <View style={styles.photo}>
+          <ExitButton setPhotoId={props.setPhotoId} />
           <View style={styles.image}>
-              <Text style={styles.title}>{props.pictureSelected}</Text>
+              <Text style={styles.title}>{props.photoId}</Text>
           </View>
           <TextInput 
               style={styles.input}
@@ -114,14 +104,12 @@ const Picture = (props) => {
 //Page Content
 
 const Content = () => {
-  const [pictureSelected, setpictureSelected] = React.useState(0);
-
-  useEffect(() => console.log(pictureSelected), [pictureSelected]); //prints value of picture selected every time it updates
+  const [photoId, setPhotoId] = React.useState(null);
 
   return (
     <View>
-      <VerticalPictureList handler={setpictureSelected} />
-      <Picture pictureSelected={pictureSelected} handler={setpictureSelected} />
+      <VerticalPhotoList setPhotoId={setPhotoId} />
+      <SelectedPhoto photoId={photoId} setPhotoId={setPhotoId} />
     </View>
   );
 };
@@ -149,12 +137,16 @@ const styles =  StyleSheet.create({
       textAlign: "center",
       backgroundColor: "white"
     },
+    listImage: {
+      width: smallBox-1,
+      height: smallBox-1,
+    },
     title: {
       fontSize: 32,
       textAlign: "center",
       color: '#373737'
     },
-    picture: {
+    photo: {
       top: controlHeight/3,
       left: controlHeight/8,
       width: width-controlHeight/4,

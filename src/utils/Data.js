@@ -1,23 +1,22 @@
 const DATA = []
 
 class Placeholder {
-  constructor(id, number) {
+  constructor(id) {
     this.id = id;
-    this.number = number;
+    this.src = require('../assets/LinkedIn_Profile.jpg');
   };
 };
 
 const createData = (numPics) => {
   var i = 1;
   while (i <= numPics) {
-    const j = i.toString();
-    const pic = new Placeholder(i, j);
+    const pic = new Placeholder(i);
     DATA.push(pic);
     i++;
   };
 };
 
-createData(102);
+createData(10);
 
 export { DATA };
 

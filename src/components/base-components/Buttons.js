@@ -30,6 +30,10 @@ const IconGradientButton = (props) => (
 
 
 
+
+
+
+
 const {width} = Dimensions.get('window');
 const buttonWidth = width/5;
 
