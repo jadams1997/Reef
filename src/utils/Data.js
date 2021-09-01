@@ -16,7 +16,7 @@ const createData = (numPics) => {
   };
 };
 
-createData(102);
+createData(10);
 
 export { DATA };
 

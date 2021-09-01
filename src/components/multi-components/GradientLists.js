@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { View, FlatList, StyleSheet, Text, Image, TextInput, Dimensions, TouchableOpacity } from "react-native";
+import React from "react";
+import { View, FlatList, StyleSheet, Image, TextInput, Dimensions, TouchableOpacity } from "react-native";
 
 import { LinearGradient } from 'expo-linear-gradient';
 import { Entypo } from '@expo/vector-icons';
@@ -48,6 +48,7 @@ const VerticalPhotoList = (props) => {
             keyExtractor={item => item.id}
             numColumns='3'
             initialNumToRender={18}
+            style={styles.list}
         />
     );
 };
@@ -102,7 +103,7 @@ const SelectedPhoto = (props) => {
 //Page Content
 
 const Content = () => {
-  const [photo, setPhoto] = React.useState({});
+  const [photo, setPhoto] = React.useState(null);
 
   return (
     <View>
@@ -139,10 +140,8 @@ const styles =  StyleSheet.create({
       width: smallBox-1,
       height: smallBox-1,
     },
-    title: {
-      fontSize: 32,
-      textAlign: "center",
-      color: '#373737'
+    list: {
+      height: '100%'
     },
     photo: {
       top: controlHeight/3,
