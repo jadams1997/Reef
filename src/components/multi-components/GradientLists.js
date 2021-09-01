@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { View, FlatList, StyleSheet, Text, Image, TextInput, Dimensions, TouchableOpacity } from "react-native";
 
-import { toInteger } from "lodash";
-
 import { LinearGradient } from 'expo-linear-gradient';
 import { Entypo } from '@expo/vector-icons';
 
@@ -29,8 +27,8 @@ class Square extends React.PureComponent {
         style={styles.squareBorderGradient}
       > 
         <View style={styles.whiteBoxBackground}>
-          <TouchableOpacity style={styles.square} onPress={() => this.props.setPhotoId(this.props.id)}>
-            <Image style={styles.listImage} source={this.props.src}/>
+          <TouchableOpacity style={styles.square} onPress={() => this.props.setPhoto(this.props.sourcePhoto)}> 
+            <Image style={styles.listImage} source={this.props.sourcePhoto.src}/>
           </TouchableOpacity>
         </View>
       </LinearGradient>
@@ -40,7 +38,7 @@ class Square extends React.PureComponent {
 
 const VerticalPhotoList = (props) => {
     const renderItem = ({ item }) => (
-        <Square src={item.src} id={item.id} setPhotoId={props.setPhotoId} />
+        <Square sourcePhoto={item} setPhoto={props.setPhoto} /> //source photo is an object {id: num, src: require function}
     );
  
     return (
@@ -60,7 +58,7 @@ const VerticalPhotoList = (props) => {
 const ExitButton = (props) => {
   
   const exit = () => (
-    props.setPhotoId(0)
+    props.setPhoto(null)
   );
   
   return (
@@ -75,7 +73,7 @@ const SelectedPhoto = (props) => {
 
   const [text, onChangeText] = React.useState(null);
 
-  if (props.photoId == 0) {
+  if (props.photo == null) {
       return null;
   };
   return (
@@ -85,9 +83,9 @@ const SelectedPhoto = (props) => {
       height: height-controlHeight
     }}>  
       <View style={styles.photo}>
-          <ExitButton setPhotoId={props.setPhotoId} />
+          <ExitButton setPhoto={props.setPhoto} />
           <View style={styles.image}>
-              <Text style={styles.title}>{props.photoId}</Text>
+              <Image style={{height: '100%', width: '100%', borderRadius: 10}} source={props.photo.src}/>
           </View>
           <TextInput 
               style={styles.input}
@@ -104,12 +102,12 @@ const SelectedPhoto = (props) => {
 //Page Content
 
 const Content = () => {
-  const [photoId, setPhotoId] = React.useState(null);
+  const [photo, setPhoto] = React.useState({});
 
   return (
     <View>
-      <VerticalPhotoList setPhotoId={setPhotoId} />
-      <SelectedPhoto photoId={photoId} setPhotoId={setPhotoId} />
+      <VerticalPhotoList setPhoto={setPhoto} />
+      <SelectedPhoto photo={photo} setPhoto={setPhoto} />
     </View>
   );
 };
