@@ -1,6 +1,6 @@
 import React from "react";
-import { ViewScreenWrapper } from '../components/page-components/BasicScreenWrappers.js';
-import { Content } from "../components/multi-components/GradientLists.js";
+import { ViewScreenWrapper } from '../components/page-components/basicscreenwrappers.js';
+import { Content } from "../components/multi-components/gradientlists.js";
 
 const PublicFeedScreen = () => {
     return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { Ionicons, FontAwesome5, Entypo, SimpleLineIcons } from '@expo/vector-icons'; 
-import { IconGradientButton } from '../base-components/Buttons.js'
+import { IconGradientButton } from '../base-components/buttons.js'
 
 
 const AppControlBar = (props) => {

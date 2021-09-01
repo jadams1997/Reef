@@ -4,7 +4,7 @@ import MaskedView from '@react-native-community/masked-view';
 
 import { LinearGradient } from "expo-linear-gradient";
 
-import { SafeScreenWrapper } from "../components/page-components/BasicScreenWrappers";
+import { SafeScreenWrapper } from "../components/page-components/basicscreenwrappers";
 
 
 
@@ -92,21 +92,17 @@ const ProfileTabButton = (props) => {
 
 const ProfileTabBar = () => {
 
-    const [buttonsStatus, setButtonsStatus] = React.useState({
+    const [buttonsStatus, setButtonsStatus] = React.useState({ // Declare Button Names here in the state
         Timeline: true,
-        Pictures: false,
+        Photos: false,
         Posts: false,
-        Articles: false,
-        Friends: false
+        Articles: false
     });
-
-    useEffect(() => console.log(buttonsStatus), [buttonsStatus]);
     
-    const buttons = ['Timeline', 'Pictures', 'Posts', 'Articles'];
-    const buttonsList = buttons.map((button, index) => {
-            return <ProfileTabButton buttonsStatus = {buttonsStatus} setButtonsStatus = {setButtonsStatus} label = {button} key = {index} />;
-        }
-    );
+    var buttonsList = []
+    Object.entries(buttonsStatus).forEach(([key])  => {
+            buttonsList.push(<ProfileTabButton buttonsStatus = {buttonsStatus} setButtonsStatus = {setButtonsStatus} label = {key} key = {key}/>);
+    });
 
     return (
         <View style = {styles.profileTabBar}>
