@@ -1,64 +1,28 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Dimensions } from 'react-native';
+import { View, TouchableOpacity } from 'react-native';
 import MaskedView from '@react-native-community/masked-view';
-import { LinearGradient } from "expo-linear-gradient";
+import { LinearGradient } from 'expo-linear-gradient';
+import { _iconGradientButtonStyles } from '../../styles/_styles.buttons.js';
+
 
 const IconGradientButton = (props) => (
-    <TouchableOpacity onPress={props.onPress} style={styles.smallButton} >
+    <TouchableOpacity onPress={props.onPress} style={props.style} >
       <MaskedView
-        style={styles.maskedView}
+        style={_iconGradientButtonStyles.maskedView}
         maskElement={
-          <View style={styles.maskElement}>
+          <View style={_iconGradientButtonStyles.maskElement}>
             {props.icon}
           </View>
         }
       >
         <LinearGradient 
-          colors={['#00d3ff','#00efe3','#00fe67','#00ff79','#00ffcc','#00eff9','#00b6ff','#0068ff']} 
-          start={props.start} 
-          end={props.end} 
-          style={styles.maskViewGradient} 
+          colors={props.gradientColor.color} 
+          start={props.gradientColor.start} 
+          end={props.gradientColor.end} 
+          style={_iconGradientButtonStyles.maskViewGradient} 
         />
       </MaskedView>
     </TouchableOpacity>
   );
-
-
-
-
-
-
-
-
-
-
-
-
-const {width} = Dimensions.get('window');
-const buttonWidth = width/5;
-
-const styles =  StyleSheet.create({
-    smallButton: {
-      alignItems: "center",
-      justifyContent: "center",
-      width: buttonWidth,
-      backgroundColor: "white"
-    },
-    maskedView: { 
-      flex: 1, 
-      flexDirection: 'row', 
-      height: '100%' 
-    },
-    maskElement: {
-      backgroundColor: 'transparent',
-      flex: 1,
-      justifyContent: 'center',
-      alignItems: 'center'
-    },
-    maskViewGradient: {
-      flex: 1, 
-      height: '100%',
-    }
-});
 
 export { IconGradientButton };

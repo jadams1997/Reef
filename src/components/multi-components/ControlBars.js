@@ -1,7 +1,12 @@
 import React from 'react';
 import { View, StyleSheet, Dimensions } from 'react-native';
 import { Ionicons, FontAwesome5, Entypo, SimpleLineIcons } from '@expo/vector-icons'; 
+
 import { IconGradientButton } from '../base-components/buttons.js'
+import { tabBarButtonStyles } from '../../styles/styles.buttons.js';
+
+const buttonStyle = tabBarButtonStyles.buttonStyle;
+const buttonGradients = tabBarButtonStyles.buttonGradientVariations;
 
 
 const AppControlBar = (props) => {
@@ -15,32 +20,32 @@ const AppControlBar = (props) => {
       <IconGradientButton 
         onPress={() => nav("MenuScreen")} 
         icon={<SimpleLineIcons name="menu" size={24} />}
-        start={{x: 0.8, y: 0.2}}
-        end={{x: 0.2, y: 0.8}}  
+        style={buttonStyle}  
+        gradientColor={buttonGradients.var1} 
       />
       <IconGradientButton 
         onPress={() => nav("MessengerScreen")} 
         icon={<Ionicons name="md-chatbox-ellipses" size={30} />}
-        start={{x: 0, y: 1}}
-        end={{x: 1, y: 0}}  
+        style={buttonStyle}
+        gradientColor={buttonGradients.var2} 
       />
       <IconGradientButton 
         onPress={() => nav("ProfileScreen")} 
         icon={<FontAwesome5 name="user-alt" size={24} />}
-        start={{x: 0, y: 1}}
-        end={{x: 1, y: 0}}  
+        style={buttonStyle}
+        gradientColor={buttonGradients.var3}    
       />
       <IconGradientButton 
         onPress={() => nav("FriendsScreen")} 
         icon={<FontAwesome5 name="user-friends" size={24} />}
-        start={{x: 0.8, y: 0.2}}
-        end={{x: 0.2, y: 0.8}}  
+        style={buttonStyle}
+        gradientColor={buttonGradients.var4}  
       />
       <IconGradientButton 
         onPress={() => nav("PublicFeedScreen")} 
         icon={<Entypo name="quote" size={30} />}
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 1}}  
+        style={buttonStyle}
+        gradientColor={buttonGradients.var5}  
       />
     </View >
   );
