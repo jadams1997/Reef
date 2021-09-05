@@ -6,7 +6,7 @@ import { MessengerScreen } from "./src/containers/messengerscreen.js";
 import { PublicFeedScreen } from "./src/containers/publicfeedscreen.js";
 import { FriendsScreen } from "./src/containers/friendsscreen.js";
 import { ProfileScreen } from "./src/containers/profilescreen.js";
-import { AppControlBar } from "./src/components/multi-components/controlbars.js";
+import { AppControlBar } from "./src/components/multi-components/appcontrolbar.js";
 
 const Tab = createBottomTabNavigator();
 

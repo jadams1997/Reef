@@ -1,8 +1,9 @@
 import React from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import { View } from 'react-native';
 import { Ionicons, FontAwesome5, Entypo, SimpleLineIcons } from '@expo/vector-icons'; 
-
 import { IconGradientButton } from '../base-components/buttons.js'
+
+import { _controlBarStyle } from '../../styles/_styles.appcontrolbar.js';
 import { tabBarButtonStyles } from '../../styles/styles.buttons.js';
 
 const buttonStyle = tabBarButtonStyles.buttonStyle;
@@ -16,7 +17,7 @@ const AppControlBar = (props) => {
   };
 
   return (
-    <View style={styles.control} >
+    <View style={_controlBarStyle} >
       <IconGradientButton 
         onPress={() => nav("MenuScreen")} 
         icon={<SimpleLineIcons name="menu" size={24} />}
@@ -50,25 +51,5 @@ const AppControlBar = (props) => {
     </View >
   );
 };
-
-const {height, width} = Dimensions.get('window');
-const controlHeight = height/10;
-
-const styles =  StyleSheet.create({
-    control: {
-      width: width,
-      height: controlHeight,
-      position: "absolute",
-      bottom: 0,
-      backgroundColor: "white",
-      opacity: .98,
-      flexDirection: "row",
-      shadowColor: "#000",
-      shadowOffset: {width: 0, height: 10},
-      shadowOpacity: 0.51,
-      shadowRadius: 13.16,
-      elevation: 20,
-    }
-});
 
 export { AppControlBar };
