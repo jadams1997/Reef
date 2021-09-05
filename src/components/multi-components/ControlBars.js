@@ -21,31 +21,31 @@ const AppControlBar = (props) => {
         onPress={() => nav("MenuScreen")} 
         icon={<SimpleLineIcons name="menu" size={24} />}
         style={buttonStyle}  
-        gradientColor={buttonGradients.var1} 
+        gradient={buttonGradients.var1} 
       />
       <IconGradientButton 
         onPress={() => nav("MessengerScreen")} 
         icon={<Ionicons name="md-chatbox-ellipses" size={30} />}
         style={buttonStyle}
-        gradientColor={buttonGradients.var2} 
+        gradient={buttonGradients.var2} 
       />
       <IconGradientButton 
         onPress={() => nav("ProfileScreen")} 
         icon={<FontAwesome5 name="user-alt" size={24} />}
         style={buttonStyle}
-        gradientColor={buttonGradients.var3}    
+        gradient={buttonGradients.var3}    
       />
       <IconGradientButton 
         onPress={() => nav("FriendsScreen")} 
         icon={<FontAwesome5 name="user-friends" size={24} />}
         style={buttonStyle}
-        gradientColor={buttonGradients.var4}  
+        gradient={buttonGradients.var4}  
       />
       <IconGradientButton 
         onPress={() => nav("PublicFeedScreen")} 
         icon={<Entypo name="quote" size={30} />}
         style={buttonStyle}
-        gradientColor={buttonGradients.var5}  
+        gradient={buttonGradients.var5}  
       />
     </View >
   );

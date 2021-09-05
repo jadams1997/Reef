@@ -16,9 +16,9 @@ const IconGradientButton = (props) => (
         }
       >
         <LinearGradient 
-          colors={props.gradientColor.color} 
-          start={props.gradientColor.start} 
-          end={props.gradientColor.end} 
+          colors={props.gradient.color} 
+          start={props.gradient.start} 
+          end={props.gradient.end} 
           style={_iconGradientButtonStyles.maskViewGradient} 
         />
       </MaskedView>
