@@ -1,34 +1,22 @@
 import React, {useEffect} from "react";
-import { View, StyleSheet, ScrollView, Text, Image, Dimensions, TouchableOpacity } from "react-native";
+import { View, StyleSheet, ScrollView, Text, Dimensions, TouchableOpacity } from "react-native";
 import MaskedView from '@react-native-community/masked-view';
 
 import { LinearGradient } from "expo-linear-gradient";
 
 import { SafeScreenWrapper } from "../components/page-components/basicscreenwrappers";
+import { GradientWrappedImage } from "../components/base-components/gradientwrappedimage";
 
+import { profilePictureStyle } from "../styles/styles.gradientwrappedimage";
 
+const ppGradient = profilePictureStyle.gradient;
+const ppSR = profilePictureStyle.sr;
 
 
 const {width} = Dimensions.get('window');
-const profilePictureDiameter = width*(1/2);
 
-const ProfilePictureMain = () => {
-    return(
-        <LinearGradient
-            colors={['#00d3ff','#00efe3','#00fe67','#00ff79','#00ffcc','#00eff9','#00b6ff','#0068ff']} 
-            start={{x: 0, y: 0}} 
-            end={{x: 1, y: 1}} 
-            style={styles.pictureBackgroundGradient}
-        >  
-            <View style={styles.pictureWhiteBackground}>
-                <Image 
-                    source = {require('../assets/LinkedIn_Profile.jpg')}
-                    style = {styles.profilePicture} 
-                />
-            </View>
-        </LinearGradient>
-    );
-}
+
+
 
 const ProfileTabButton = (props) => {
     
@@ -121,7 +109,11 @@ const ProfileScreen = () => {
                         Profile
                     </Text>
                 </View>
-                <ProfilePictureMain />
+                <GradientWrappedImage
+                    source = {require('../assets/LinkedIn_Profile.jpg')}
+                    gradient = {ppGradient}
+                    sr = {ppSR}
+                />
                 <Text style = {styles.name}>
                     Jamie Adams
                 </Text>
@@ -155,32 +147,6 @@ const styles =  StyleSheet.create({
         fontSize: 30,
         color: '#373737'
     },
-
-
-    pictureBackgroundGradient: {
-        width: profilePictureDiameter+8,
-        height: profilePictureDiameter+8,
-        borderRadius: (profilePictureDiameter+8)/2,
-        justifyContent: 'center',
-        alignItems: 'center',
-        position: 'relative',
-        alignSelf: 'center',
-        marginTop: width/30 
-    },
-    pictureWhiteBackground: {
-        height: profilePictureDiameter+4,
-        width: profilePictureDiameter+4,
-        borderRadius:(profilePictureDiameter+4)/2,
-        backgroundColor: 'white',
-        justifyContent: 'center',
-        alignItems: 'center',  
-    },
-    profilePicture: {
-        height: profilePictureDiameter, 
-        width: profilePictureDiameter,
-        borderRadius: profilePictureDiameter/2,
-    },
-
 
     name: {
         fontSize: 30,

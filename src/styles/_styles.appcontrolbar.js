@@ -1,4 +1,4 @@
-import { sizes as s } from './styles.appBasics';
+import { sizes as s } from './app.styles.js';
 
 const _controlBarStyle =  {
     width: s.w,

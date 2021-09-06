@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Ionicons, FontAwesome5, Entypo, SimpleLineIcons } from '@expo/vector-icons'; 
-import { IconGradientButton } from '../base-components/buttons.js'
+import { IconGradientButton } from '../base-components/icongradientbutton.js'
 
 import { _controlBarStyle } from '../../styles/_styles.appcontrolbar.js';
-import { tabBarButtonStyles } from '../../styles/styles.buttons.js';
+import { tabBarButtonStyles } from '../../styles/styles.icongradientbutton.js';
 
 const buttonStyle = tabBarButtonStyles.buttonStyle;
 const buttonGradients = tabBarButtonStyles.buttonGradientVariations;
