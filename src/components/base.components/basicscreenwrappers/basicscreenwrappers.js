@@ -1,5 +1,6 @@
 import React from 'react';
-import {StyleSheet, View, SafeAreaView, StatusBar} from "react-native";
+import { View, SafeAreaView, StatusBar} from "react-native";
+import { styles } from "./styles.basicscreenwrappers";
 
 
 const ViewScreenWrapper = ({children}) => {
@@ -27,13 +28,5 @@ const SafeScreenWrapper = ({children}) => {
         </SafeAreaView>
     );
 }
-
-const styles =  StyleSheet.create({
-    page: {
-      flex:1,
-      backgroundColor: "white",
-      marginTop: 0
-    },
-});
 
 export {ViewScreenWrapper, SafeScreenWrapper};

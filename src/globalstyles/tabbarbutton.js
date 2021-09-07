@@ -1,4 +1,4 @@
-import { colors as c, sizes as s, linGradCoords as lgc } from './app.styles.js';
+import { colors as c, sizes as s, linGradCoords as lgc } from '../globalstyles.js';
 
 class TabButtonStyle {
     constructor(coords) {

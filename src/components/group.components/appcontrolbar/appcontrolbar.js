@@ -1,10 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Ionicons, FontAwesome5, Entypo, SimpleLineIcons } from '@expo/vector-icons'; 
-import { IconGradientButton } from '../base-components/icongradientbutton.js'
+import { IconGradientButton } from "../../base.components"
 
-import { _controlBarStyle } from '../../styles/_styles.appcontrolbar.js';
-import { tabBarButtonStyles } from '../../styles/styles.icongradientbutton.js';
+import { styles } from './styles.appcontrolbar.js';
+import { tabBarButtonStyles } from '../../../globalstyles/tabbarbutton.js';
 
 const buttonStyle = tabBarButtonStyles.buttonStyle;
 const buttonGradients = tabBarButtonStyles.buttonGradientVariations;
@@ -17,7 +17,7 @@ const AppControlBar = (props) => {
   };
 
   return (
-    <View style={_controlBarStyle} >
+    <View style={styles} >
       <IconGradientButton 
         onPress={() => nav("MenuScreen")} 
         icon={<SimpleLineIcons name="menu" size={24} />}

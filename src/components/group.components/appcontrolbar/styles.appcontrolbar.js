@@ -1,6 +1,6 @@
-import { sizes as s } from './app.styles.js';
+import { sizes as s } from '../../../globalstyles.js';
 
-const _controlBarStyle =  {
+const styles =  {
     width: s.w,
     height: s.h10,
     position: "absolute",
@@ -15,4 +15,4 @@ const _controlBarStyle =  {
     elevation: 20,
 };
 
-export { _controlBarStyle }; 
+export { styles }; 

@@ -1,17 +1,12 @@
 import React, {useEffect} from "react";
 import { View, StyleSheet, ScrollView, Text, Dimensions, TouchableOpacity } from "react-native";
 import MaskedView from '@react-native-community/masked-view';
-
 import { LinearGradient } from "expo-linear-gradient";
 
-import { SafeScreenWrapper } from "../components/page-components/basicscreenwrappers";
-import { GradientWrappedImage } from "../components/base-components/gradientwrappedimage";
+import { SafeScreenWrapper, GradientWrappedImage } from "../components/base.components";
 
-import { profilePictureStyle } from "../styles/styles.gradientwrappedimage";
 
-const ppGradient = profilePictureStyle.gradient;
-const ppSR = profilePictureStyle.sr;
-
+import { profilePictureProperties } from "../globalstyles/profilepicture";
 
 const {width} = Dimensions.get('window');
 
@@ -111,8 +106,8 @@ const ProfileScreen = () => {
                 </View>
                 <GradientWrappedImage
                     source = {require('../assets/LinkedIn_Profile.jpg')}
-                    gradient = {ppGradient}
-                    sr = {ppSR}
+                    gradient = {profilePictureProperties.gradient}
+                    style =  {profilePictureProperties.style}
                 />
                 <Text style = {styles.name}>
                     Jamie Adams

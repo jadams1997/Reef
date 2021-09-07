@@ -1,7 +1,7 @@
 import { StyleSheet } from "react-native";
-import { sizes as s } from "./app.styles";
+import { sizes as s } from "../../../globalstyles";
 
-const gradientWrappedImageStyles  = (props) => StyleSheet.create({
+const styles  = (props) => StyleSheet.create({
     pictureBackgroundGradient: {
         width: props.size,
         height: props.size,
@@ -27,4 +27,4 @@ const gradientWrappedImageStyles  = (props) => StyleSheet.create({
     }
 });
 
-export { gradientWrappedImageStyles };
+export { styles };

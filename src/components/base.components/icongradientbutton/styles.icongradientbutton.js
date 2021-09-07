@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-const _iconGradientButtonStyles =  StyleSheet.create({
+const styles =  StyleSheet.create({
     maskedView: { 
       flex: 1, 
     },
@@ -15,4 +15,4 @@ const _iconGradientButtonStyles =  StyleSheet.create({
     }
 });
 
-export { _iconGradientButtonStyles };
+export { styles };
