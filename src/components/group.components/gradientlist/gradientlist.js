@@ -4,7 +4,7 @@ import { View, FlatList, StyleSheet, Image, TextInput, Dimensions, TouchableOpac
 import { LinearGradient } from 'expo-linear-gradient';
 import { Entypo } from '@expo/vector-icons';
 
-import { DATA } from "../../../utils/Data.js";
+import { DATA } from "../../../utils/data.js";
 
 
 

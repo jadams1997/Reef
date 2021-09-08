@@ -1,6 +1,6 @@
 import React from "react";
-import { ViewScreenWrapper } from '../components/base.components';
-import { Content } from "../components/group.components";
+import { ViewScreenWrapper } from '../../components/base.components';
+import { Content } from "../../components/group.components";
 
 const PublicFeedScreen = () => {
     return (

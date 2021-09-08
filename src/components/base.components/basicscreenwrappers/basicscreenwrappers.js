@@ -29,4 +29,4 @@ const SafeScreenWrapper = ({children}) => {
     );
 }
 
-export {ViewScreenWrapper, SafeScreenWrapper};
+export { ViewScreenWrapper, SafeScreenWrapper};

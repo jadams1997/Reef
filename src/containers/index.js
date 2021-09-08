@@ -1,7 +1,7 @@
-import { FriendsScreen } from "./friendsscreen";
-import { MenuScreen } from "./menuscreen";
-import { MessengerScreen } from "./messengerscreen";
-import { ProfileScreen } from "./profilescreen";
-import { PublicFeedScreen} from "./publicfeedscreen";
+import { FriendsScreen } from "./friendsscreen/friendsscreen";
+import { MenuScreen } from "./menuscreen/menuscreen";
+import { MessengerScreen } from "./messengerscreen/messengerscreen";
+import { ProfileScreen } from "./profilescreen/profilescreen";
+import { PublicFeedScreen} from "./publicfeedscreen/publicfeedscreen";
 
 export { FriendsScreen, MenuScreen, MessengerScreen, ProfileScreen, PublicFeedScreen };

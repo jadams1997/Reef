@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { sizes as s } from "../../../globalstyles";
+import { sizes as s } from "../../../globals/globalstyles";
 
 const styles  = (props) => StyleSheet.create({
     pictureBackgroundGradient: {

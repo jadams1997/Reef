@@ -4,20 +4,20 @@ import MaskedView from '@react-native-community/masked-view';
 import { LinearGradient } from 'expo-linear-gradient';
 import { styles } from './styles.icongradientbutton.js';
 
-const IconGradientButton = (props) => (
-    <TouchableOpacity onPress={props.onPress} style={props.style} >
+const IconGradientButton = ({onPress, style, gradient, icon}) => (
+    <TouchableOpacity onPress={onPress} style={style} >
       <MaskedView
         style={styles.maskedView}
         maskElement={
           <View style={styles.maskElement}>
-            {props.icon}
+            {icon}
           </View>
         }
       >
         <LinearGradient 
-          colors={props.gradient.color} 
-          start={props.gradient.coords.start} 
-          end={props.gradient.coords.end} 
+          colors={gradient.color} 
+          start={gradient.start} 
+          end={gradient.end} 
           style={styles.maskViewGradient} 
         />
       </MaskedView>
