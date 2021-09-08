@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { sizes as s } from "../../globals";
 
 const styles =  StyleSheet.create({
     
@@ -9,12 +10,12 @@ const styles =  StyleSheet.create({
 
     headerWrapper: {
         position: 'relative',
-        width: width-width/20,
-        paddingLeft: width/40,
-        paddingBottom: width/30,
-        marginLeft: width/40,
-        marginTop: width/10,
-        marginBottom: width/20,
+        width: s.w-s.w20,
+        paddingLeft: s.w40,
+        paddingBottom: s.w30,
+        marginLeft: s.w40,
+        marginTop: s.w10,
+        marginBottom: s.w20,
         borderBottomWidth: 1,
         backgroundColor: 'white',
         borderColor: '#D3D3D3'
@@ -26,27 +27,32 @@ const styles =  StyleSheet.create({
     },
     
 
-    
+    gradientWrappedImage: {
+        height: s.w2,
+        width: s.w2,
+        borderRadius: s.w4,
+        marginTop: s.w30,
+    },
 
     name: {
         fontSize: 30,
         alignSelf: "center",
-        marginTop: width/20,
+        marginTop: s.w20,
         color: '#373737',
         backgroundColor: 'white'
     },
 
 
     profileTabBar: {
-        height: width/7,
-        marginTop: width/20,
-        marginHorizontal: width/40,
+        height: s.w7,
+        marginTop: s.w20,
+        marginHorizontal: s.w40,
         alignItems: 'center',
         flexDirection: 'row'
     },
     profileTabButton: {
-        height: width/7,
-        width: (width-width/20)/4,
+        height: s.w7,
+        width: s.w4-s.w80,
         justifyContent: 'center',
         backgroundColor: 'white',
         borderBottomWidth: 1,
@@ -60,7 +66,7 @@ const styles =  StyleSheet.create({
     },
     maskedView: { 
         flexDirection: 'row', 
-        height: width/7,
+        height: s.w7,
         overflow: 'visible' //required to get borders to overlap
       },
     maskElement: {

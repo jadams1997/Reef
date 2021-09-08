@@ -1,29 +1,27 @@
 import { StyleSheet } from "react-native";
-import { sizes as s } from "../../../globals/globalstyles";
 
-const styles  = (props) => StyleSheet.create({
-    pictureBackgroundGradient: {
-        width: props.size,
-        height: props.size,
-        borderRadius: props.radius,
-        justifyContent: 'center',
-        alignItems: 'center',
+const styles  = (style) => StyleSheet.create({
+    linearGradient: {
+        height: 40,
+        width: 40,
+        borderRadius: 0,
         position: 'relative',
         alignSelf: 'center',
-        marginTop: s.w30 
+        justifyContent: 'center'
     },
-    pictureWhiteBackground: {
-        height: props.size-4,
-        width: props.size-4,
-        borderRadius: props.radius-2,
+    view: {
+        height: style.height ? style.height-4 : 36,
+        width: style.width ? style.width-4 : 36,
+        borderRadius: style.borderRadius ? style.borderRadius-2 : 0,
         backgroundColor: 'white',
         justifyContent: 'center',
-        alignItems: 'center',  
+        alignItems: 'center',
+        alignSelf: 'center'
     },
-    profilePicture: {
-        height: props.size-8, 
-        width: props.size-8,
-        borderRadius: props.radius-4,
+    image: {
+        height: style.height ? style.height-8 : 32,
+        width: style.width ? style.width-8 : 32,
+        borderRadius: style.borderRadius ? style.borderRadius-4 : 0
     }
 });
 

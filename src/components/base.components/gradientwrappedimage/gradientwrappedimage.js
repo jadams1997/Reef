@@ -1,28 +1,23 @@
 import React from "react";
-import { View, Image} from "react-native";
+import { View, Image, StyleSheet} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 import { styles } from "./styles.gradientwrappedimage";
 
-
-/*
-Gradient Wrapped Image
-*/
-
-
-
-const GradientWrappedImage = ({gradient, source, size, radius, style}) => {
+const GradientWrappedImage = ({gradient, source, style}) => {
+    console.log([styles.linearGradient, style])
+    
     return(
         <LinearGradient
             colors={gradient.color} 
             start={gradient.start} 
             end={gradient.end} 
-            style={[styles(size, radius).pictureBackgroundGradient, style]}
+            style={[styles(style).linearGradient, style]}
         >  
-            <View style={styles(size, radius).pictureWhiteBackground}>
+            <View style={styles(style).view}>
                 <Image 
                     source = {source}
-                    style = {styles(size, radius).profilePicture} 
+                    style = {styles(style).image} 
                 />
             </View>
         </LinearGradient>

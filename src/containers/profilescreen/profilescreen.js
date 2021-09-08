@@ -1,14 +1,12 @@
 import React, {useEffect} from "react";
-import { View, StyleSheet, ScrollView, Text, Dimensions, TouchableOpacity } from "react-native";
+import { View, ScrollView, Text, TouchableOpacity } from "react-native";
 import MaskedView from '@react-native-community/masked-view';
 import { LinearGradient } from "expo-linear-gradient";
-
 import { SafeScreenWrapper, GradientWrappedImage } from "../../components/base.components";
 
+import { styles } from "./styles.profilescreen";
 import { GradientClass } from "../../globals";
-import { profilePictureProperties } from "../../globals/profilepicture";
 
-const {width} = Dimensions.get('window');
 
 
 

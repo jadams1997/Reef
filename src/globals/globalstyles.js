@@ -31,11 +31,16 @@ const sizes = {
     w3: width/3,
     w4: width/4,
     w5: width/5,
+    w6: width/6,
+    w7: width/7,
     w10: width/10,
     w20: width/20,
     w30: width/30,
     w40: width/40,
-    w50: width/50
+    w50: width/50,
+    w60: width/60,
+    w70: width/70,
+    w80: width/80,
 }
 
 
