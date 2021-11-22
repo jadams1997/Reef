@@ -1,8 +1,9 @@
 import React from "react";
-import { View, FlatList, StyleSheet, Image, TextInput, Dimensions, TouchableOpacity } from "react-native";
+import { View, FlatList, StyleSheet, Image, Dimensions, TouchableOpacity } from "react-native";
 
 import { LinearGradient } from 'expo-linear-gradient';
-import { Entypo } from '@expo/vector-icons';
+
+import { PhotoViewer } from "../../base.components";
 
 import { DATA } from "../../../utils/data.js";
 
@@ -54,50 +55,10 @@ const VerticalPhotoList = (props) => {
 };
 
 
-//Picture
-
-const ExitButton = (props) => {
-  
-  const exit = () => (
-    props.setPhoto(null)
-  );
-  
-  return (
-    <TouchableOpacity onPress={exit} style={styles.exit}>
-      <Entypo name="cross" size={40} color="black" />
-    </TouchableOpacity>
-  );
-};
 
 
-const SelectedPhoto = (props) => {
 
-  const [text, onChangeText] = React.useState(null);
 
-  if (props.photo == null) {
-      return null;
-  };
-  return (
-    <View style={{            
-      position: 'absolute',
-      width: width,
-      height: height-controlHeight
-    }}>  
-      <View style={styles.photo}>
-          <ExitButton setPhoto={props.setPhoto} />
-          <View style={styles.image}>
-              <Image style={{height: '100%', width: '100%', borderRadius: 10}} source={props.photo.src}/>
-          </View>
-          <TextInput 
-              style={styles.input}
-              onChangeText={onChangeText}
-              value={text}
-              placeholder={"Send Something!"}
-          />
-      </View>
-    </View>
-  ); 
-};
 
 
 //Page Content
@@ -108,7 +69,7 @@ const Content = () => {
   return (
     <View>
       <VerticalPhotoList setPhoto={setPhoto} />
-      <SelectedPhoto photo={photo} setPhoto={setPhoto} />
+      <PhotoViewer photo={photo} setPhoto={setPhoto} />
     </View>
   );
 };
@@ -143,45 +104,7 @@ const styles =  StyleSheet.create({
     list: {
       height: '100%'
     },
-    photo: {
-      top: controlHeight/3,
-      left: controlHeight/8,
-      width: width-controlHeight/4,
-      height: height-1.5*controlHeight,
-      borderRadius: 10,
-      backgroundColor: "white",
-      justifyContent: "space-around" ,
-      alignItems: 'center',
-      shadowColor: "#000",
-      shadowOffset: {width: 0, height: 3},
-      shadowOpacity: 0.29,
-      shadowRadius: 4.65,
-      elevation: 7
-    },
-    image: {
-      width: 2*smallBox,
-      height: 2*smallBox,
-      justifyContent: "center",
-      color: "black",
-      textAlign: "center",
-      borderWidth: .5,
-      borderColor: "grey",
-      borderRadius: 10,
-      backgroundColor: "white"
-    },
-    input: {
-      fontSize: 24,
-      textAlign: "center",
-      padding: 10,
-      borderWidth: .5,
-      borderColor: "grey",
-      borderRadius: 5,
-    },
-    exit: {
-      left: smallBox/4,
-      backgroundColor: "white",
-      alignSelf: "flex-start"
-    }
+    
 });
 
 export { Content };

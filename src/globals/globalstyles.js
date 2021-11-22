@@ -3,7 +3,10 @@ import { Dimensions } from 'react-native';
 //COLOURS
 
 const colors = {
-    
+    lightGrey: '#EBEBEB',
+    underlayGrey: '#ADADAD',
+    spaceGrey: '#858585',
+    lightBlue: '#0099FF'
 };
 
 
@@ -19,6 +22,7 @@ const sizes = {
     h4: height/4,
     h5: height/5,
     h10: height/10,
+    h15: height/15,
     h20: height/20,
     h30: height/30,
     h40: height/40,

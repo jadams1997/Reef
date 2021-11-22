@@ -1,12 +1,10 @@
 import React from "react";
-import { View, Image, StyleSheet} from "react-native";
+import { View, Image} from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 import { styles } from "./styles.gradientwrappedimage";
 
 const GradientWrappedImage = ({gradient, source, style}) => {
-    console.log([styles.linearGradient, style])
-    
     return(
         <LinearGradient
             colors={gradient.color} 
