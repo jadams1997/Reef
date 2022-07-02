@@ -1,8 +1,8 @@
-import React, {useEffect} from "react";
+import React from "react";
 import { View, ScrollView, Text, TouchableOpacity } from "react-native";
-import MaskedView from '@react-native-community/masked-view';
+import MaskedView from '@react-native-masked-view/masked-view';
 import { LinearGradient } from "expo-linear-gradient";
-import { SafeScreenWrapper, GradientWrappedImage } from "../../components/base.components";
+import { SafeScreenWrapper, GradientWrappedImage, PhotoViewer } from "../../components/base.components";
 
 import { styles } from "./styles.profilescreen";
 import { GradientClass } from "../../globals";

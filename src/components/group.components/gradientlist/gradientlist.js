@@ -1,10 +1,7 @@
 import React from "react";
 import { View, FlatList, StyleSheet, Image, Dimensions, TouchableOpacity } from "react-native";
-
 import { LinearGradient } from 'expo-linear-gradient';
-
 import { PhotoViewer } from "../../base.components";
-
 import { DATA } from "../../../utils/data.js";
 
 

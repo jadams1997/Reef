@@ -5,7 +5,6 @@ import { BlurView } from 'expo-blur';
 
 import { styles } from "./styles.photoviewer";
 import { sizes, colors } from "../../../globals"
-import { color } from 'react-native-reanimated';
 
 //Picture
 
