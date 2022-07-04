@@ -2,8 +2,8 @@ import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
-import { MenuScreen, MessengerScreen, PublicFeedScreen, FriendsScreen, ProfileScreen, PasswordScreen, SplashScreen } from "./containers";
-import { AppControlBar } from "./group.components";
+import { MenuScreen, MessengerScreen, PublicFeedScreen, FriendsScreen, ProfileScreen, PasswordScreen, SplashScreen } from "../containers";
+import { AppControlBar } from "../components/group.components";
 
 
 const Stack = createStackNavigator(); 
