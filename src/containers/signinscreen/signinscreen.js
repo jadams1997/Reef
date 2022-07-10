@@ -1,5 +1,6 @@
 import React, {useState, useContext} from "react";
 import LoginScreen from "react-native-login-screen";
+import {AuthContext} from "../../contexts/authorisationcontext"
 
 const SignInScreen = () => {
 
@@ -13,8 +14,8 @@ const SignInScreen = () => {
             logoImageSource={require("../../assets/Circle_Logo.png")}
             onLoginPress={() => signIn({email, password})}
             onSignupPress={() => {}}
-            onEmailChange={setEmail}
-            onPasswordChange={setPassword}
+            onEmailChange={() => {setEmail}}
+            onPasswordChange={() => {setPassword}}
         />
     );
 }

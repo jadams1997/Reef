@@ -1,11 +1,11 @@
 import React from "react";
 import * as SecureStore from "expo-secure-store";
-import Navigator from "./src/navigator/navigator";
-
-const AuthContext = React.createContext();
+import { Navigator } from "./src/navigator/navigator";
+import { AuthContext } from "./src/contexts/authorisationcontext";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
-  
+
   const [state, dispatch] = React.useReducer(
     (prevState, action) => {
       switch (action.type) {
@@ -48,7 +48,7 @@ export default function App() {
       }
 
 
-
+      
       dispatch({type: 'RESTORE_TOKEN', token: userToken});
     };
     bootstrapAsync();
@@ -74,9 +74,11 @@ export default function App() {
   );
   
   return (
-    <AuthContext.Provider value={authContext}>
-      <Navigator />
-    </AuthContext.Provider>
+    <NavigationContainer>
+      <AuthContext.Provider value={authContext}>
+          <Navigator userToken={state.userToken} isSignout={state.isSignout} isLoading={state.isLoading}/>
+      </AuthContext.Provider>
+    </NavigationContainer>
   );
 };
 
