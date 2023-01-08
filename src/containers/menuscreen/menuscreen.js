@@ -1,5 +1,5 @@
 import React from "react";
-import { ViewScreenWrapper } from '../../components/base.components';
+import { ViewScreenWrapper, AnimatedGradient } from '../../components/base.components';
 
 const MenuScreen = () => {
     return (

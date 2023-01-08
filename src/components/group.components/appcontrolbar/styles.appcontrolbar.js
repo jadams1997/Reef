@@ -3,7 +3,7 @@ import { sizes as s } from '../../../globals';
 const styles =  {
     controlBar: {
         width: s.w,
-        height: s.h10,
+        height: s.h12,
         position: "absolute",
         bottom: 0,
         backgroundColor: "white",

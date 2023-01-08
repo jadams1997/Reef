@@ -22,6 +22,8 @@ const sizes = {
     h4: height/4,
     h5: height/5,
     h10: height/10,
+    h11: height/11,
+    h12: height/12,
     h15: height/15,
     h20: height/20,
     h30: height/30,

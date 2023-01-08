@@ -1,5 +1,5 @@
-import { StyleSheet} from "react-native";
-import { colors, sizes as s, sizes} from '../../../globals'
+import { StyleSheet } from "react-native";
+import { colors, sizes as s, sizes } from '../../../globals'
 
 const styles = StyleSheet.create({
   blurView: {
